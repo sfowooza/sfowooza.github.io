@@ -36,6 +36,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         nav .logo {
@@ -48,7 +50,8 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -60,6 +63,38 @@
 
         nav a:hover {
             opacity: 0.8;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background: #f0f0ff;
         }
 
         .container {
@@ -93,6 +128,15 @@
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid #f0f0f0;
+        }
+
+        .app-screenshot {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            display: block;
+            margin: 20px auto;
         }
 
         .features {
@@ -166,12 +210,6 @@
             margin-bottom: 20px;
         }
 
-        .back-link {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
         @media (max-width: 600px) {
             .page-header h1 {
                 font-size: 1.8rem;
@@ -182,7 +220,23 @@
             }
 
             nav ul {
-                gap: 15px;
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                background: rgba(255,255,255,0.2);
+                margin-top: 5px;
+            }
+
+            .dropdown-content a {
+                color: white;
+                padding: 8px 12px;
             }
         }
     </style>
@@ -193,8 +247,15 @@
             <a href="index.html" class="logo">sfowooza</a>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="ventures.html">Ventures</a></li>
-                <li><a href="skillhub.html">SkillHub</a></li>
+                <li class="dropdown">
+                    <a href="projects.html">Projects ▾</a>
+                    <div class="dropdown-content">
+                        <a href="ventures.html">Ventures</a>
+                        <a href="skillhub.html">SkillHub</a>
+                    </div>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
             </ul>
         </div>
     </nav>
@@ -208,6 +269,8 @@
         <div class="card">
             <h2>About Ventures</h2>
             <p>Ventures is a locally-installed personal finance application that helps you track your income, expenses, investments, savings, and more. Your data stays on your device — always.</p>
+
+            <img src="Screenshot_20251229_020134.png" alt="Ventures App Screenshot" class="app-screenshot">
 
             <div class="features">
                 <div class="feature">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sfowooza</title>
+    <title>Contact Me - Sfowooza</title>
     <style>
         * {
             margin: 0;
@@ -102,86 +102,95 @@
             padding: 20px;
         }
 
-        header {
+        .page-header {
             text-align: center;
-            padding: 80px 20px 60px;
+            padding: 60px 20px 40px;
             color: white;
         }
 
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
-        header .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .project-card {
+        .card {
             background: white;
             border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
+            padding: 40px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
 
-        .project-card h3 {
+        .card h2 {
             color: #667eea;
             font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            padding: 25px;
+            background: #f8f9ff;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .contact-item .icon {
+            font-size: 2rem;
             margin-bottom: 10px;
         }
 
-        .project-card p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .project-card .tag {
-            display: inline-block;
-            background: #f0f0ff;
+        .contact-item h3 {
             color: #667eea;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .add-project {
-            border: 2px dashed rgba(255,255,255,0.3);
-            background: transparent;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 180px;
-            opacity: 0.7;
-        }
-
-        .add-project:hover {
-            opacity: 1;
-            border-color: white;
-        }
-
-        .add-project .icon {
-            font-size: 3rem;
             margin-bottom: 10px;
+        }
+
+        .contact-item a {
+            color: #764ba2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: #f0f0ff;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
         }
 
         footer {
@@ -201,8 +210,12 @@
         }
 
         @media (max-width: 600px) {
-            header h1 {
-                font-size: 2rem;
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 25px;
             }
 
             nav ul {
@@ -246,28 +259,46 @@
         </div>
     </nav>
 
-    <header>
-        <h1>Welcome</h1>
-        <p class="subtitle">Projects & Privacy Policies</p>
-    </header>
+    <div class="page-header">
+        <h1>Get In Touch</h1>
+        <p>I'd love to hear from you!</p>
+    </div>
 
     <div class="container">
-        <div class="projects-grid">
-            <a href="ventures.html" class="project-card">
-                <h3>Ventures</h3>
-                <p>Personal Finance Tracker - Track income, expenses, investments & more with complete privacy.</p>
-                <span class="tag">Privacy Policy</span>
-            </a>
+        <div class="card">
+            <h2>Contact Information</h2>
+            <p>Whether you have questions about my apps, want to collaborate, or just want to say hello, feel free to reach out through any of these channels.</p>
 
-            <a href="skillhub.html" class="project-card">
-                <h3>SkillHub</h3>
-                <p>Business & Skills Marketplace - Showcase your hustle, skills, gifts and talents to the world.</p>
-                <span class="tag">Privacy Policy</span>
-            </a>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:admin@avodahsystems.com">admin@avodahsystems.com</a>
+                </div>
 
-            <div class="project-card add-project">
-                <span class="icon">+</span>
-                <p>More coming soon...</p>
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Kampala, Uganda</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">📱</div>
+                    <h3>Phone</h3>
+                    <a href="tel:+256702033733">+256 702 033733</a>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/sfowooza" class="social-link" target="_blank">
+                    <span>GitHub</span>
+                </a>
+                <a href="https://avodahsystems.com" class="social-link" target="_blank">
+                    <span>Avodah Systems</span>
+                </a>
+                <a href="https://play.google.com/store/apps/dev?id=Frank+Sendowooza" class="social-link" target="_blank">
+                    <span>Google Play</span>
+                </a>
             </div>
         </div>
     </div>
