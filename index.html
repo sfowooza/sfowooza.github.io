@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ventures - Personal Finance Tracker. Track your income, expenses, investments, and more with complete privacy.">
-    <title>Ventures - Personal Finance Tracker</title>
+    <title>Sfowooza</title>
     <style>
         * {
             margin: 0;
@@ -20,6 +19,48 @@
             min-height: 100vh;
         }
 
+        nav {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -28,92 +69,89 @@
 
         header {
             text-align: center;
-            padding: 60px 20px 40px;
+            padding: 80px 20px 60px;
             color: white;
         }
 
         header h1 {
             font-size: 3rem;
-            margin-bottom: 10px;
-            font-weight: 700;
+            margin-bottom: 15px;
         }
 
-        header .tagline {
+        header .subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
         }
 
-        .card {
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .project-card {
             background: white;
             border-radius: 16px;
-            padding: 40px;
-            margin-bottom: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
 
-        .card h2 {
+        .project-card h3 {
             color: #667eea;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .feature {
-            padding: 20px;
-            background: #f8f9ff;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .feature-icon {
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
         }
 
-        .feature h3 {
-            color: #667eea;
-            margin-bottom: 8px;
-        }
-
-        .privacy-policy h3 {
-            color: #667eea;
-            font-size: 1.2rem;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-
-        .privacy-policy p {
-            margin-bottom: 10px;
-        }
-
-        .privacy-policy ul {
-            margin-left: 20px;
+        .project-card p {
+            color: #666;
             margin-bottom: 15px;
         }
 
-        .privacy-policy li {
-            margin-bottom: 5px;
+        .project-card .tag {
+            display: inline-block;
+            background: #f0f0ff;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
-        .highlight {
-            background: #fff3cd;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #ffc107;
-            margin: 20px 0;
+        .add-project {
+            border: 2px dashed rgba(255,255,255,0.3);
+            background: transparent;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+            opacity: 0.7;
+        }
+
+        .add-project:hover {
+            opacity: 1;
+            border-color: white;
+        }
+
+        .add-project .icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
         }
 
         footer {
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             color: white;
         }
 
@@ -127,124 +165,54 @@
             text-decoration: underline;
         }
 
-        .update-date {
-            color: #666;
-            font-style: italic;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
         @media (max-width: 600px) {
             header h1 {
                 font-size: 2rem;
             }
 
-            .card {
-                padding: 25px;
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">sfowooza</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ventures.html">Ventures</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header>
-        <h1>Ventures</h1>
-        <p class="tagline">Personal Finance Tracker | 100% Private & Offline</p>
+        <h1>Welcome</h1>
+        <p class="subtitle">Projects & Privacy Policies</p>
     </header>
 
     <div class="container">
-        <div class="card">
-            <h2>About Ventures</h2>
-            <p>Ventures is a locally-installed personal finance application that helps you track your income, expenses, investments, savings, and more. Your data stays on your device — always.</p>
+        <div class="projects-grid">
+            <a href="ventures.html" class="project-card">
+                <h3>Ventures</h3>
+                <p>Personal Finance Tracker - Track income, expenses, investments & more with complete privacy.</p>
+                <span class="tag">Privacy Policy</span>
+            </a>
 
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">[Income]</div>
-                    <h3>Income Tracking</h3>
-                    <p>Track all your income sources</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">[Expense]</div>
-                    <h3>Expense Records</h3>
-                    <p>Categorize and monitor spending</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">[Invest]</div>
-                    <h3>Investments</h3>
-                    <p>Manage savings and investments</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">[Debt]</div>
-                    <h3>Creditors/Debtors</h3>
-                    <p>Track who owes you & vice versa</p>
-                </div>
+            <div class="project-card add-project">
+                <span class="icon">+</span>
+                <p>More coming soon...</p>
             </div>
-
-            <div class="highlight">
-                <strong>No account required. No data collection. Works completely offline.</strong>
-            </div>
-        </div>
-
-        <div class="card privacy-policy">
-            <h2>Privacy Policy</h2>
-            <p class="update-date">Last Updated: December 2024</p>
-
-            <h3>1. Data Storage</h3>
-            <p>Ventures is a locally-installed application that stores all your personal and financial data locally on your device. Your data never leaves your device unless you explicitly choose to export or backup it.</p>
-
-            <h3>2. Data We Collect</h3>
-            <p>The app collects and stores the following information locally on your device:</p>
-            <p><strong>Personal Finance Data:</strong></p>
-            <ul>
-                <li>Income transactions and sources</li>
-                <li>Expense records and categories</li>
-                <li>Investment and savings account details</li>
-                <li>Creditor and debtor information</li>
-                <li>Budget targets and planning notes</li>
-            </ul>
-            <p><strong>Security Data:</strong></p>
-            <ul>
-                <li>PIN code for app lock (encrypted with AES-256)</li>
-                <li>App preferences (theme, currency)</li>
-            </ul>
-
-            <h3>3. PIN Security</h3>
-            <p>Your PIN code is encrypted using AES-256 encryption and stored securely on your device using Flutter Secure Storage. The PIN is never transmitted over any network or stored on any external servers.</p>
-
-            <h3>4. Data Backup & Export</h3>
-            <p>You can choose to export your data as CSV, Excel, or PDF files or create backup files. These files are stored locally on your device. It is your responsibility to handle these files securely if you choose to share or store them elsewhere (cloud storage, email, etc.).</p>
-
-            <h3>5. No Online Accounts</h3>
-            <p>Ventures does not require you to create an online account. No user data is collected, transmitted, or stored on any external servers. All functionality works completely offline.</p>
-
-            <h3>6. Permissions</h3>
-            <p>The app may request the following permissions:</p>
-            <ul>
-                <li>Storage: To save export/backup files to your device</li>
-            </ul>
-
-            <h3>7. Children's Privacy</h3>
-            <p>This app is not intended for use by children under the age of 13. We do not knowingly collect any data from children.</p>
-
-            <h3>8. Data Retention & Deletion</h3>
-            <p>You can delete all your data at any time through the "Clear All Data" option in Settings. This will permanently remove all transactions, accounts, PIN, and preferences from your device.</p>
-
-            <h3>9. Third-Party Services</h3>
-            <p>This app does not integrate with any third-party services that collect your data. Any links to external websites (such as GitHub) are provided for convenience and are not covered by this privacy policy.</p>
-
-            <h3>10. Changes to This Policy</h3>
-            <p>We may update this privacy policy from time to time. Any changes will be reflected in this section of the app.</p>
-
-            <h3>11. Contact Us</h3>
-            <p>If you have questions about this privacy policy or how your data is handled, please visit our GitHub repository: <a href="https://github.com/sfowooza" style="color: #667eea;">https://github.com/sfowooza</a></p>
-
-            <hr style="margin: 25px 0; border: none; border-top: 1px solid #eee;">
-
-            <p>By using Ventures, you agree to this privacy policy and the handling of your data as described above.</p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Ventures. <a href="https://github.com/sfowooza">GitHub</a></p>
+        <p>&copy; 2024 <a href="https://github.com/sfowooza">sfowooza</a></p>
     </footer>
 </body>
 </html>
